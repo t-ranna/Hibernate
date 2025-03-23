@@ -23,6 +23,7 @@ public class App {
         Transaction tx = session.beginTransaction();
         session.save(rana);
 
+
         tx.commit();
     }
 }
