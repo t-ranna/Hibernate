@@ -1,15 +1,19 @@
 package com.rana;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name="alien_tablee")
 
 public class Alien //bean or POJO
 {
     @Id
     private int aid;
+
+    @Transient
     private String aname;
+
+    @Column(name="alien_color")
     private String color;
 
 
