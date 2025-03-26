@@ -10,10 +10,14 @@ public class Alien //bean or POJO
     @Id
     private int aid;
 
-    @Transient
-    private String aname;
+     //    @Transient
+    private AlienName aname;
 
-    @Column(name="alien_color")
+
+     //    used in embeddable
+//    @Column(name="alien_color")
+
+
     private String color;
 
 
@@ -33,11 +37,32 @@ public class Alien //bean or POJO
         this.aid = aid;
     }
 
-    public String getAname() {
+     //    used in embeddable
+//    public String getAname() {
+//    return aname;
+//}
+//
+//    public void setAname(String aname) {
+//        this.aname = aname;
+//    }
+
+
+    //    used in embeddable
+    public AlienName getAname() {
         return aname;
     }
 
-    public void setAname(String aname) {
+    public void setAname(AlienName aname) {
         this.aname = aname;
+    }
+
+    //        used in fetch
+    @Override
+    public String toString() {
+        return "Alien{" +
+                "aid=" + aid +
+                ", aname='" + aname + '\'' +
+                ", color='" + color + '\'' +
+                '}';
     }
 }
